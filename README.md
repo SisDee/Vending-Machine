@@ -1,4 +1,5 @@
-https://travis-ci.com/SisDee/Vending-Machine.svg?branch=main
+[![Build Status](https://travis-ci.com/SisDee/Vending-Machine.svg?branch=main)](https://travis-ci.com/SisDee/Vending-Machine)
+
 # Vending-Machine
 This is Web application implementation of a vending machine that vends products based upon four (4) denominations of coins and returns coins if there is no item.
 
