@@ -54,7 +54,6 @@
                     <div class="spin-loader" data-ng-class="{'shrink': shrinkOnHide, 'expand': !shrinkOnHide}"></div>
                 </div>
 
-
                 <div class="row">
                     <div id = "vendor-terminal" class="col col-lg-3">
                         <div class = "vendor-console"> Balance: <br/> <h5>R {{balance}} </h5></div>
@@ -65,7 +64,7 @@
                             </div>
                         </div>
                         <form name="purchase_form" ng-submit="finalizePurchase()"  novalidate>
-                            <input type="number" class="form-control" id="product-selection" min="1" max="15" ng-change="reset()" placeholder="Product Code" name="product_selection" ng-model="selected_product" required/>
+                            <input type="number" class="form-control" id="product-selection" min="1" max="products_sequential.length" ng-change="reset()" placeholder="Product Code" name="product_selection" ng-model="selected_product" required/>
                             
                             <div ng-show="purchase_form.$submitted || purchase_form.product_selection.$touched">
                                 <span ng-show="purchase_form.product_selection.$error.required" style="color:red;">required field</span>

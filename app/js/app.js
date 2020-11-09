@@ -61,8 +61,10 @@ mainApp.controller( "VendingController", function( $scope,dataService){
         for(var i=0;i<n_rows;i++){
             var row = [];
             for(var j=0;j<n_cols;++j){
-                data[i*n_cols+j].img = "stock_images/"+data[i*n_cols+j].name+".png";
-                row.push(data[i*n_cols+j]);
+                if(i*n_cols+j < data.length){
+                    data[i*n_cols+j].img = "stock_images/"+data[i*n_cols+j].name+".png";
+                    row.push(data[i*n_cols+j]);
+                }
             }
             formatted_data.push(row);
         }
@@ -84,7 +86,7 @@ mainApp.controller( "VendingController", function( $scope,dataService){
     $scope.finalizePurchase = function(){
         var product = $scope.findProduct($scope.selected_product);
         
-        if(product.count>0){
+        if(product!=null && product.count>0){
             $scope.product_available = true;
             // now check we have the required balance >= price
             if($scope.balance>=product.price){
