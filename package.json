@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start app/js/test/karma.conf.js "
+    "test": "karma start app/js/test/karma.conf.js ",
+    "codecov": "codecov"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "bower": "^1.8.8",
+    "codecov": "^3.8.1",
+    "coveralls": "^3.1.0",
     "jasmine": "^3.6.3",
     "karma": "^5.2.3",
     "karma-coverage": "^2.0.3",
