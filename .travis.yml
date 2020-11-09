@@ -1,25 +1,16 @@
-dist: trusty
-sudo: false
 
 language: node_js
-node_js:
-  - '8'
-
+node_js:    
+  - "12"
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-
-cache:
-  directories:
-    - ./node_modules
-
-install:
-  - npm install
-
-script:
-  - npm test 
-  - npm run codecov
-  - bash <(curl -s https://codecov.io/bash)
+  chrome: stable   
+before_script:
+  - npm install 
+jobs:
+  include:
+    - stage: Test coverage
+      script:
+        - npm test 
+        - npm run codecov
+      after_success:
+         - bash <(curl -s https://codecov.io/bash)
