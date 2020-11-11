@@ -11,6 +11,7 @@ cors = CORS(application)
 def home():
     return "home"
 
+
 #hand request to retrieve all products in the database
 @application.route("/products",methods=['GET'])
 def get_products():

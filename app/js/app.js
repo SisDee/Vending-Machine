@@ -15,8 +15,8 @@ mainApp.controller( "VendingController", function( $scope,dataService){
         $scope.hideLoader = !$scope.hideLoader;
     };
 
-    $scope.insert_coin = function(d){
-        $scope.balance+=d;
+    $scope.insert_coin = function(value){
+        $scope.balance+=value;
     }
 
     // retrieve products
